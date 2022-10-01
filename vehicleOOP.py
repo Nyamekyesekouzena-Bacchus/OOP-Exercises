@@ -32,11 +32,12 @@ class wheel(part):
       return 3
       #print("Wheel is old after three year")
 
-  #Overrides parent function 
+  #Overrides parrent function 
   def display(self):
     print(f"material= {self.material}, serialNum ={self.serialNum}, age = {self.age} ")
   
  
+
 class vehicle:
   def __init__(self, serialNum:int, name: str, wheels: wheel, parts: part): 
     assert len(wheels)<=3, "the vechicle must have 3 or less wheels"
@@ -65,11 +66,18 @@ def run():
   wheels.append (wheel(2, 3, 1, "rubber"))
   parts= []
   parts.append(part("engine", 1, 2))
-  parts.append (part("bumper", 2, 1))
-  parts.append(part("door", 2, 2))
+  parts.append (part("handlebar", 2, 1))
+  parts.append(part("seat", 2, 2))
+  parts.append(part("breaks", 4, 11))
+  parts.append(part("Gastank", 6, 2))
+  parts.append(part("Breaks", 9, 2))
+  parts.append(part("Headligths", 1, 1))
+  parts.append(part("Speedmeter", 5, 2))
 
-  test =vehicle(123, "car", wheels, parts)
+  test =vehicle(123, "Motor Cycle", wheels, parts)
   test.display()
 
 run()
+  
+  
   
