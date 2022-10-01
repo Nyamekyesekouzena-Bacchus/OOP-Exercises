@@ -13,7 +13,7 @@ class part:
     return self.age>2
 
   def display(self):
-    print(f"type= {self.type}, serialNum ={self.serialNum}, age = {self.age} ")
+    print(f"type: {self.type}, Serial Number: {self.serialNum}, Age:{self.age} ")
 
 #Sub class of the part class 
 class wheel(part):
@@ -34,7 +34,7 @@ class wheel(part):
 
   #Overrides parrent function 
   def display(self):
-    print(f"material= {self.material}, serialNum ={self.serialNum}, age = {self.age} ")
+    print(f"Serial Number: {self.serialNum}, Years: {self.isOld()}, Material: {self.material},  ")
   
  
 
@@ -49,14 +49,12 @@ class vehicle:
 
   def display(self):
     print(f"Serial Number: {self.serialNum}, name: {self.name} ")
-    print("Wheel:")
-    print("SNum ø Material life(years)")
+    print("Wheels:")
     for wheel in self.wheels:
-      print ('{0}    {1}  {2}   {3}'.format(wheel.serialNum,wheel.diameter,wheel.material,wheel.isOld()))
+      wheel.display()
     print("Parts:")
-    print("SNum Types Age  Old")
     for part in self.parts:
-      print ('{0}    {1}  {2}   {3}'.format(part.serialNum,part.type,part.age,part.isOld()))
+      part.display()
       
 
 #Fucntion to run everything; this does not need to be in function form  
