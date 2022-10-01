@@ -24,6 +24,7 @@ class wheel(part):
     self.diameter = diameter
     self.material= material
 
+ #Overrides parrent function
   def isOld(self):
     if self.diameter > 1:
       return 1
