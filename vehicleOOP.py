@@ -17,14 +17,10 @@ class part:
 
 #Sub class of the part class 
 class wheel(part):
-  def __init__(self, serialNum:int , age: int, diameter: float, material: str,  type="wheel"):
-    super().__init__(
-      type, serialNum, age
-    )
+  def __init__(self, diameter: float, material: str):
     self.diameter = diameter
     self.material= material
 
- #Overrides parrent function
   def isOld(self):
     if self.diameter > 1:
       return 1
@@ -35,7 +31,7 @@ class wheel(part):
 
   #Overrides parrent function 
   def display(self):
-    print(f"Serial Number: {self.serialNum}, Years: {self.isOld()}, Material: {self.material},  ")
+    print(f" Diameter: {self.diameter}, Years: {self.isOld()}, Material: {self.material},  ")
   
  
 
@@ -61,8 +57,8 @@ class vehicle:
 #Fucntion to run everything; this does not need to be in function form  
 def run():
   wheels=[]
-  wheels.append( wheel(1,2,3,"rubber"))
-  wheels.append (wheel(2, 3, 1, "rubber"))
+  wheels.append(wheel(3, "rubber"))
+  wheels.append(wheel(1, "rubber"))
   parts= []
   parts.append(part("engine", 1, 2))
   parts.append (part("handlebar", 2, 1))
@@ -73,6 +69,7 @@ def run():
   parts.append(part("Headligths", 1, 1))
   parts.append(part("Speedmeter", 5, 2))
 
+  #Create Vehicle object
   test =vehicle(123, "Motor Cycle", wheels, parts)
   test.display()
 
